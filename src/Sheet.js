@@ -157,7 +157,7 @@ console.log(globalData);
 
   
 
-  const sheetHandler = () =>{
+  const sheetHandler = () => {
    seteachsheet(prev=>prev+1)
     setSheet(prev => [...prev,`Sheet`+eachsheet])
   }

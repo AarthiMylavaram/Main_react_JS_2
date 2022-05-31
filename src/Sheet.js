@@ -149,7 +149,7 @@ console.log(globalData);
           columnText : fieldValue
         }};
         setGlobalData(prev=>({
-          ...prev,...Obj }))
+          ...prev,...Obj }) )
   }
 
     // ???

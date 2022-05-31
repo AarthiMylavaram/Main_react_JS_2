@@ -17,6 +17,8 @@ function Sheet() {
    let SheetParam = useParams().SheetParams;
 const [rowData, setrowData] = useState("")
 const [colData, setcolData] = useState("")
+const [choreDesc, setChoreDesc] = useState();
+    const [name, setName] = useState();
     // globalData.useParams=()=>{
     // Obj[columntext]={
     // columnText:''}
@@ -32,8 +34,8 @@ const [colData, setcolData] = useState("")
     // newTabledata[fieldName] = fieldValue;//updates the data
 
     // setGlobalData(newTabledata);
-    const fieldName = e.target.getAttribute('name'); //This gets the name the user gave
-  const fieldValue = e.target.value;//this gets the actuall value
+    const fieldName = e.target.getAttribute('ame'); //This gets the name the user gave
+  const fieldValue = choreDesc;//this gets the actuall value
   console.log(globalData[SheetParam])
   if (globalData[SheetParam] !== undefined){ //update the sheet  inside the globalData
     if(fieldName==="rowText"){
@@ -117,6 +119,39 @@ console.log(globalData);
 
   const handleSubmit= (e) => {
     e.preventDefault();
+    const fieldName = e.target.getAttribute('userName'); //This gets the name the user gave
+  const fieldValue = e.target.value;//this gets the actuall value
+  console.log(globalData[SheetParam])
+  if (globalData[SheetParam] !== undefined){ //update the sheet  inside the globalData
+    if(fieldName==="rowText"){
+     setGlobalData(prev=>{
+       globalData[SheetParam].rowText=fieldValue;
+       globalData[SheetParam].columnText = prev[SheetParam].columnText;
+     })
+    }
+    else {
+    setGlobalData(prev=>{
+      globalData[SheetParam].rowText=prev[SheetParam].rowText
+      globalData[SheetParam].columnText = fieldValue;
+    })
+  }
+  }
+  else {
+    let Obj= {}
+    if(fieldName==="rowText"){
+      Obj[SheetParam]={
+        rowText : fieldValue ,
+        columnText : ''
+      }}
+      else {
+        Obj[SheetParam]={
+          rowText : '' ,
+          columnText : fieldValue
+        }};
+        setGlobalData(prev=>({
+          ...prev,...Obj }))
+  }
+
     // ???
   }
 
@@ -202,13 +237,17 @@ Data
         <input 
           name='choreDesc' 
           type='text'
+          value={choreDesc}
+          onChange={e => setChoreDesc(e.target.value)}
         />
         <br/>
         <label>Name</label>
         <br />
         <input 
           name='userName' 
-          type='text' 
+          type='text'
+          value={name}
+          onChange={e => setName(e.target.value)} 
         />
         <br />
         

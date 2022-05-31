@@ -1,0 +1,88 @@
+body {
+  background-color: #d1d3d7;
+  color: black;
+  padding: 0px;
+  margin: 0px;
+  font-family: Arial;
+  /* text-align: center; */
+  
+}
+.gop {
+   display: flex;
+   /* justify-content: center; */
+   width: 15vw;
+   /* height: 90vh; */
+   margin-bottom: 0px;
+}
+.align{
+  height: 75vh;
+  margin-bottom: 0px;
+}
+
+.task{
+  display:flex;
+  column-gap:168px;
+  height: 85vh;
+  margin-bottom: 0px;
+
+}
+.table{
+  margin-bottom: 0px;
+}
+
+.sheet-bar{
+  display:flex ;
+  margin-top: 0px;
+  padding: 0px;
+}
+.sheet-tab-container{
+  display:flex ;
+  
+  
+}
+.sheet-tab{
+  border: 3px solid black;
+  margin-left:2px;
+  width: 6vw;
+  font-size: small;
+  
+}
+.sheet-tab-container .plus{
+  background-color: #d1d3d7;
+  text-decoration: none;
+}
+.navsec{
+  list-style: none;
+  display: flex;
+  color: black;
+  padding: 0px;
+  margin: 0px;
+  font-size: small;
+  
+  /* height: 30px;
+  justify-content: right; */
+  
+}
+.lis{
+  padding-right: 60px;
+  text-decoration: none;
+}
+
+.brdf{
+  border: 3px solid black;
+  margin-left: 2px;
+  font-size: small;
+}
+
+
+/* todo list css */
+.main-row{
+  height: 100vh;
+}
+.main-col{
+  max-width: 500px;
+  min-height: 300px;
+}
+.todo-done{
+  text-decoration: line-through;
+}
